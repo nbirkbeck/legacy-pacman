@@ -23,9 +23,7 @@ struct Sound {
 
 Sound sounds[NUM_SOUNDS];
 
-void DSound_Play(SoundID sound_id) {
-  sounds[sound_id].Play();
-}
+void DSound_Play(SoundID sound_id) { sounds[sound_id].Play(); }
 
 void LazyInit() {
   std::cout << "Init sounds\n";
@@ -40,26 +38,19 @@ void LazyInit() {
   audio_dev =
       SDL_OpenAudioDevice(nullptr, 0, &desired_audio_spec, &audio_spec, 0);
 
-  SDL_LoadWAV("sounds/chomp.wav", &audio_spec,
-              &sounds[chompID].audio_buf,
+  SDL_LoadWAV("sounds/chomp.wav", &audio_spec, &sounds[chompID].audio_buf,
               &sounds[chompID].audio_len);
-  SDL_LoadWAV("sounds/return.wav", &audio_spec,
-              &sounds[returnID].audio_buf,
+  SDL_LoadWAV("sounds/return.wav", &audio_spec, &sounds[returnID].audio_buf,
               &sounds[returnID].audio_len);
-  SDL_LoadWAV("sounds/die.wav", &audio_spec,
-              &sounds[dieID].audio_buf,
+  SDL_LoadWAV("sounds/die.wav", &audio_spec, &sounds[dieID].audio_buf,
               &sounds[dieID].audio_len);
-  SDL_LoadWAV("sounds/eatfruit.wav", &audio_spec,
-              &sounds[eatFruitID].audio_buf,
+  SDL_LoadWAV("sounds/eatfruit.wav", &audio_spec, &sounds[eatFruitID].audio_buf,
               &sounds[eatFruitID].audio_len);
-  SDL_LoadWAV("sounds/eatghost.wav", &audio_spec,
-              &sounds[eatGhostID].audio_buf,
+  SDL_LoadWAV("sounds/eatghost.wav", &audio_spec, &sounds[eatGhostID].audio_buf,
               &sounds[eatGhostID].audio_len);
-  SDL_LoadWAV("sounds/weak.wav", &audio_spec,
-              &sounds[weakID].audio_buf,
+  SDL_LoadWAV("sounds/weak.wav", &audio_spec, &sounds[weakID].audio_buf,
               &sounds[weakID].audio_len);
-  SDL_LoadWAV("sounds/start.wav", &audio_spec,
-              &sounds[startID].audio_buf,
+  SDL_LoadWAV("sounds/start.wav", &audio_spec, &sounds[startID].audio_buf,
               &sounds[startID].audio_len);
   std::cout << "Done init audio\n";
 }
